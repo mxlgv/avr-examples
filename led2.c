@@ -2,25 +2,25 @@
 #include <util/delay.h>
 
 typedef unsigned char byte;
-#define  MAX_NUMBER_LEDS 7 // Максимальное количество светодиодов 
+#define  MAX_NUMBER_LEDS 7 // РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃРІРµС‚РѕРґРёРѕРґРѕРІ 
 
 void main ()
 {
-	char led_num[MAX_NUMBER_LEDS] ={1, 6, 3, 4, 7, 5, 1}; // Порядок зажигания светодиодов 
-    DDRD=0xFF;  /* настройка порта D на вывод */
+	char led_num[MAX_NUMBER_LEDS] ={1, 6, 3, 4, 7, 5, 1}; // РџРѕСЂСЏРґРѕРє Р·Р°Р¶РёРіР°РЅРёСЏ СЃРІРµС‚РѕРґРёРѕРґРѕРІ 
+    DDRD=0xFF;  /* РЅР°СЃС‚СЂРѕР№РєР° РїРѕСЂС‚Р° D РЅР° РІС‹РІРѕРґ */
 	while(1) 
     {
         {
 			PORTD=0x00;
 			for(byte i=0; i<MAX_NUMBER_LEDS; i++)
 			{
-				PORTD |= (1 << led_num[i]-1);  // или использовать PORTD |= _BV(led_num[i]-1) Включение диодов.
+				PORTD |= (1 << led_num[i]-1);  // РёР»Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ PORTD |= _BV(led_num[i]-1) Р’РєР»СЋС‡РµРЅРёРµ РґРёРѕРґРѕРІ.
 			    _delay_ms(100);
 			} 
 			
 			for(byte i=0; i<MAX_NUMBER_LEDS; i++)
 			{
-				PORTD &= ~(1<<led_num[i]-1);  // Выключение светодиодов в том же порядке.
+				PORTD &= ~(1<<led_num[i]-1);  // Р’С‹РєР»СЋС‡РµРЅРёРµ СЃРІРµС‚РѕРґРёРѕРґРѕРІ РІ С‚РѕРј Р¶Рµ РїРѕСЂСЏРґРєРµ.
 				_delay_ms(100);
 			}
        }   

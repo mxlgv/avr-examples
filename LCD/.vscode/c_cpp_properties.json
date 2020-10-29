@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/usr/lib/gcc/avr/10.2.0/include",
+                "/usr/lib/gcc/avr/10.2.0/",
+                "/usr/avr/include"
+            ],
+            "defines": [
+                "__AVR_ATtiny2313A__"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

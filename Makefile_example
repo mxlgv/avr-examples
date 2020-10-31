@@ -1,0 +1,5 @@
+DEVICE=attiny2313
+FILENAME=test
+all:
+	avr-gcc -g -Os -mmcu=$(DEVICE) lcd_test.c -o $(FILENAME).elf
+	avr-objcopy -j .text -j .data -O ihex $(FILENAME).elf $(FILENAME).hex 

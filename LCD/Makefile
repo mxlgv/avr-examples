@@ -1,5 +1,5 @@
 all: library
-	avr-gcc -g -Os -mmcu=attiny2313 lcd_test.c -L. -lLCD -o lcd_test.elf
+	avr-gcc -g -Os -mmcu=attiny2313 lcd_test.c -L. -lLCD -o lcd_test.elf 	
 	avr-objcopy -j .text -j .data -O ihex lcd_test.elf lcd_test.hex
 
 library:
